@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Movies from "./components/Movies";
+import MovieDetails from "./components/MovieDetails";
+import UpcomingMovies from "./components/UpcomingMovies";
+import TopRatedMovies from "./components/TopRatedMovies";
+import PopularMovies from "./components/PopularMovies";
+import Error404 from "./components/Error404";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Movies />} />
+        <Route path="/movies/:id" element={<MovieDetails />} />
+        <Route path="/upcoming-movies" element={<UpcomingMovies />} />
+        <Route path="/top-rated-movies" element={<TopRatedMovies />} />
+        <Route path="/popular-movies" element={<PopularMovies />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
