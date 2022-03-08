@@ -5,6 +5,7 @@ import MovieDetails from "./components/MovieDetails";
 import UpcomingMovies from "./components/UpcomingMovies";
 import TopRatedMovies from "./components/TopRatedMovies";
 import PopularMovies from "./components/PopularMovies";
+import Search from "./components/Search";
 import Error404 from "./components/Error404";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/upcoming-movies" element={<UpcomingMovies />} />
         <Route path="/top-rated-movies" element={<TopRatedMovies />} />
         <Route path="/popular-movies" element={<PopularMovies />} />
+        <Route path="/search" element={<Search />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
