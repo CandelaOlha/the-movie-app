@@ -34,11 +34,14 @@ header {
         .nav-menu-link {
           color: $color-light;
           text-decoration: none;
+          &:hover {
+            opacity: 0.8;
+          }
         }
       }
     }
     .search-button {
-      @include cta();
+      @include cta($color-primary, $color-primary-hover);
     }
   }
 }
