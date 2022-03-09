@@ -1,0 +1,40 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+footer {
+  align-items: center;
+  background-color: $color-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 40px;
+  .credits {
+    color: $color-dark;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .social-media-icons {
+    display: flex;
+    .social-media-item {
+      list-style-type: none;
+      margin: 0 10px;
+      .social-media-link {
+        align-items: center;
+        background-color: $color-dark;
+        border-radius: 100%;
+        color: $color-light;
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+        &:hover {
+          background-color: $color-dark-hover;
+        }
+        * {
+          // No sé si está bien llamar a los hijos de .social-media-link usando *. Sería mejor usar una clase?
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@ import TopRatedMovies from "./components/TopRatedMovies";
 import PopularMovies from "./components/PopularMovies";
 import Search from "./components/Search";
 import PageNotFound from "./components/PageNotFound";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/search" element={<Search />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
