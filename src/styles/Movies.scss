@@ -1,0 +1,10 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+main {
+  align-items: center;
+  background-color: $color-light;
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}

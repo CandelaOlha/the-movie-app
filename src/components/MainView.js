@@ -1,24 +1,25 @@
-import MovieGrid from "./MovieGrid";
+import "../styles/MainView.scss";
+import MoviesGrid from "./MoviesGrid";
 
 const MainView = () => {
     return (
-        <section>
-            <MovieGrid
+        <div className="movies-grid-container">
+            <MoviesGrid
             title = "Upcoming Movies"
             link = "upcoming-movies"
             category = "upcoming"
             />
-            <MovieGrid
+            <MoviesGrid
             title = "Top rated Movies"
             link = "top-rated-movies"
             category = "top_rated"
             />
-            <MovieGrid
+            <MoviesGrid
             title = "Popular Movies"
             link = "popular-movies"
             category = "popular"
             />
-        </section>
+        </div>
     )
 }
 

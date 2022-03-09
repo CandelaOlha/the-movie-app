@@ -1,0 +1,17 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.movies-section {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 80px;
+  .movies-section-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .movies-container {
+    display: flex;
+    overflow: hidden;
+  }
+}
