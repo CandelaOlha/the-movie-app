@@ -4,7 +4,7 @@ import logo from "../logo.svg";
 
 const Nav = () => {
     return (
-        <header>
+        <header className="navbar-header">
             <nav className="navbar">
                 <Link to="/" className="homepage-link">
                     <img src={logo} alt="The Movie App's logo" />

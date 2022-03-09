@@ -1,6 +1,11 @@
+import "../styles/Movies.scss";
+import MainView from "./MainView";
+
 const Movies = () => {
     return (
-        <div></div>
+        <main>
+            <MainView />
+        </main>
     )
 }
 

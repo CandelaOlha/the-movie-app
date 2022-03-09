@@ -1,7 +1,7 @@
 @mixin cta($background-color, $background-color-hover) {
   background-color: $background-color;
   border: none;
-  border-radius: 10px;
+  border-radius: $border-radius;
   color: $color-light;
   cursor: pointer;
   padding: 16px 32px;
@@ -17,10 +17,14 @@
   padding-bottom: 5px;
   text-decoration: none;
   transition: 0.1s;
+  &:hover {
+    border-bottom: none;
+  }
 }
 
 @mixin section-title {
   color: $color-dark;
   font-size: 24px;
   font-weight: 600;
+  margin-bottom: 40px;
 }

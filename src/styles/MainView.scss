@@ -1,0 +1,8 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset";
+
+.movies-grid-container {
+  max-width: $section-max-width;
+  width: 100%;
+}

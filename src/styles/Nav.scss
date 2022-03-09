@@ -1,17 +1,18 @@
 @import "./variables.scss";
 @import "./mixins.scss";
+@import "./reset.scss";
 
-header {
+.navbar-header {
   align-items: center;
   background-color: $color-dark;
   display: flex;
   justify-content: center;
-  padding: 10px 40px;
   .navbar {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    max-width: 1100px;
+    max-width: $section-max-width;
+    padding: 10px 40px;
     width: 100%;
     .homepage-link {
       align-items: center;
