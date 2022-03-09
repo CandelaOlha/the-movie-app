@@ -1,0 +1,47 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+header {
+  align-items: center;
+  background-color: $color-dark;
+  display: flex;
+  justify-content: center;
+  padding: 10px 40px;
+  .navbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    width: 100%;
+    .homepage-link {
+      align-items: center;
+      color: $color-light;
+      display: flex;
+      text-decoration: none;
+      img {
+        width: 60px;
+      }
+      .brand-title {
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+    .nav-menu {
+      display: flex;
+      .nav-menu-item {
+        list-style-type: none;
+        margin: 0 20px;
+        .nav-menu-link {
+          color: $color-light;
+          text-decoration: none;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+    .search-button {
+      @include cta($color-primary, $color-primary-hover);
+    }
+  }
+}
