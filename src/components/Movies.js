@@ -1,6 +1,10 @@
+import MainView from "./MainView";
+
 const Movies = () => {
     return (
-        <div></div>
+        <div>
+            <MainView />
+        </div>
     )
 }
 
