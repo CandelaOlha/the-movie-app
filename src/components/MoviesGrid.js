@@ -20,8 +20,8 @@ const MoviesGrid = ({title, link, category}) => {
     return (
         <section className="movies-section">
             <header className="movies-section-header">
-                <h2 className="movies-category">{title}</h2>
-                <Link to="/">See all</Link>
+                <h2 className="category-name">{title}</h2>
+                <Link to={`${link}`} className="category-link">See all</Link>
             </header>
             <div className="movies-container">
                 {movies.map(movie => <MovieItem 

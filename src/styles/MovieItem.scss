@@ -1,0 +1,18 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset";
+
+.movie-link {
+  color: $color-dark;
+  text-decoration: none;
+  .movie-details {
+    margin: 0 10px;
+    .movie-img {
+      border-radius: $border-radius;
+    }
+    .movie-name {
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+  }
+}
