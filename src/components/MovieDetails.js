@@ -6,6 +6,7 @@ import { baseUrl, apiKey } from "../aux/GlobalVariables";
 const MovieDetails = () => {
     const params = useParams();
     const [movie, setMovie] = useState([]);
+    const [credits, setCredits] = useState([]);
 
     useEffect(() => {
         fetch(`${baseUrl}${params.id}?api_key=${apiKey}`)
@@ -13,20 +14,52 @@ const MovieDetails = () => {
         .then(data => setMovie(data));
     }, [])
 
+    useEffect(() => {
+        fetch(`${baseUrl}${params.id}/credits?api_key=${apiKey}`)
+        .then(res => res.json())
+        .then(data => setCredits(data))
+    }, [])
+
     console.log(movie)
+    console.log(credits)
 
     const getMovieYear = (movie) => {
         return movie.release_date.slice(0, 4);
     }
 
+    const getCast = (cast) => {
+        const mainCharacters = cast.slice(0, 4);
+        let mainCharactersName = [];
+        for (let i = 0; i < mainCharacters.length; i++) {
+            mainCharactersName.push(mainCharacters[i].name);
+        }
+        return mainCharactersName.join(", ");
+    }
+
+    const getDirectors = (crew) => {
+        const directors = crew.filter(person => person.known_for_department === "Directing")
+        let directorsNames = [];
+        for (let i = 0; i < directors.length; i++) {
+            directorsNames.push(directors[i].name)
+            
+        }
+        return directorsNames.join(", ");
+    }
+
     return (
-        <main className="movie-details">
-            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
-            <div className="movie-details-text-container">
-                <h1 className="movie-name">{movie.title}</h1>
-                <p className="movie-description">{movie.overview}</p>
-                <p className="movie-info">{getMovieYear(movie)} • {movie.genres[0].name}</p>
-                <button className="cta">Watch trailer</button>
+        <main className="specific-movie-details-container">
+            <div className="specific-movie-details">
+                <div className="movie-image-container">
+                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="movie-image" />
+                </div>
+                <div className="movie-details-text-container">
+                    <h1 className="movie-name">{movie.title}</h1>
+                    <p className="movie-description">{movie.overview}</p>
+                    {/* <p className="movie-info">{getMovieYear(movie)} • {movie.genres[0].name}</p> */}
+                    {/* <p className="cast"><span className="title">Starring:</span> {getCast(credits.cast)}...</p> */}
+                    {/* <p className="directors"><span className="title">Directed by:</span> {getDirectors(credits.crew)}</p> */}
+                    <button className="cta">Watch trailer</button>
+                </div>
             </div>
         </main>
     )

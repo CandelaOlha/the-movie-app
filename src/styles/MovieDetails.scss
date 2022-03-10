@@ -1,0 +1,49 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset";
+
+.specific-movie-details-container {
+  @include main-section();
+  .specific-movie-details {
+    display: flex;
+    max-width: $section-max-width;
+    padding: 0 40px 80px;
+    width: 100%;
+    .movie-image-container {
+      width: 50%;
+      .movie-image {
+        border-radius: $border-radius;
+        max-width: 100%;
+      }
+    }
+    .movie-details-text-container {
+      color: $color-dark;
+      padding-left: 40px;
+      width: 50%;
+      .movie-name {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 40px;
+      }
+      .movie-description {
+        line-height: 1.8;
+        margin-bottom: 40px;
+      }
+      .movie-info {
+        margin-bottom: 40px;
+      }
+      .cast,
+      .directors {
+        line-height: 1.8;
+        margin-bottom: 40px;
+        .title {
+          color: $color-grey;
+        }
+      }
+      .cta {
+        @include cta($color-dark, $color-dark-hover);
+      }
+    }
+  }
+}
