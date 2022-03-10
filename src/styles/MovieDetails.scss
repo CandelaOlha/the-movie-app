@@ -33,16 +33,39 @@
       .movie-info {
         margin-bottom: 40px;
       }
-      .cast,
-      .directors {
-        line-height: 1.8;
+      .crew-info {
         margin-bottom: 40px;
-        .title {
-          color: $color-grey;
+        .cast {
+          margin-bottom: 10px;
+        }
+        .cast,
+        .directors {
+          line-height: 1.8;
+          .title {
+            color: $color-grey;
+          }
         }
       }
       .cta {
         @include cta($color-dark, $color-dark-hover);
+      }
+    }
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 850px) {
+  .specific-movie-details-container {
+    .specific-movie-details {
+      flex-direction: column;
+      .movie-image-container {
+        margin-bottom: 40px;
+        width: 100%;
+      }
+      .movie-details-text-container {
+        padding: 0;
+        width: 100%;
       }
     }
   }
