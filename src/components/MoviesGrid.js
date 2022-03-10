@@ -27,6 +27,7 @@ const MoviesGrid = ({title, link, category}) => {
                 {movies.map(movie => <MovieItem 
                 title = {movie.title}
                 img = {`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                id = {movie.id}
                 key = {movie.id}
                 />)}
             </div>
