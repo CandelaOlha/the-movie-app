@@ -2,10 +2,6 @@
 @import "./mixins.scss";
 @import "./reset";
 
-main {
-  align-items: center;
-  background-color: $color-light;
-  display: flex;
-  justify-content: center;
-  padding-top: 80px;
+.movies {
+  @include main-section();
 }

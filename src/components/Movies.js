@@ -3,7 +3,7 @@ import MainView from "./MainView";
 
 const Movies = () => {
     return (
-        <main>
+        <main className="movies">
             <MainView />
         </main>
     )

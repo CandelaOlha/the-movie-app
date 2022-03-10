@@ -1,9 +1,25 @@
+@mixin main-section {
+  align-items: center;
+  background-color: $color-light;
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+@mixin section-title {
+  color: $color-dark;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
 @mixin cta($background-color, $background-color-hover) {
   background-color: $background-color;
   border: none;
   border-radius: $border-radius;
   color: $color-light;
   cursor: pointer;
+  font-size: 16px;
   padding: 16px 32px;
   text-decoration: none;
   &:hover {
@@ -20,11 +36,4 @@
   &:hover {
     border-bottom: none;
   }
-}
-
-@mixin section-title {
-  color: $color-dark;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 40px;
 }
