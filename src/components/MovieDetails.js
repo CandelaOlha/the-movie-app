@@ -37,7 +37,9 @@ const MovieDetails = () => {
         const directors = crew.filter(person => person.known_for_department === "Directing")
         let directorsNames = [];
         for (let i = 0; i < directors.length; i++) {
-            directorsNames.push(directors[i].name)
+            if (!directorsNames.includes(directors[i].name)) { // Agregué este if porque algunos nombres de directores venían duplicados
+                directorsNames.push(directors[i].name);
+            }
             
         }
         return directorsNames.join(", ");
