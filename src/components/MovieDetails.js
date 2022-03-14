@@ -20,9 +20,6 @@ const MovieDetails = () => {
         .then(data => setCredits(data))
     }, [])
 
-    console.log(movie)
-    console.log(credits)
-
     const getMovieYear = (movie) => {
         return movie.release_date.slice(0, 4);
     }
@@ -55,11 +52,11 @@ const MovieDetails = () => {
                 <div className="movie-details-text-container">
                     <h1 className="movie-name">{movie.title}</h1>
                     <p className="movie-description">{movie.overview}</p>
-                    {/* <p className="movie-info">{getMovieYear(movie)} • {movie.genres[0].name} • {movie.runtime} min</p> */}
-                    {/* <div className="crew-info">
-                        <p className="cast"><span className="title">Starring:</span> {getCast(credits.cast)}...</p>
-                        <p className="directors"><span className="title">Directed by:</span> {getDirectors(credits.crew)}</p>
-                    </div> */}
+                    <p className="movie-info">{movie.release_date && getMovieYear(movie)} • {movie.genres && movie.genres[0].name} • {movie.runtime} min</p>
+                    <div className="crew-info">
+                        <p className="cast"><span className="title">Starring:</span> {credits.cast && getCast(credits.cast)}...</p>
+                        <p className="directors"><span className="title">Directed by:</span> {credits.crew && getDirectors(credits.crew)}</p>
+                    </div>
                     <a href="" className="cta">Watch trailer</a>
                 </div>
             </div>
