@@ -1,10 +1,10 @@
-import "../styles/MoviesGrid.scss";
+import "../styles/SpecificMoviesList.scss";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { baseUrl, apiKey } from "../aux/GlobalVariables";
 import MovieItem from "./MovieItem";
 
-const MoviesGrid = ({title, link, category}) => {
+const SpecificMoviesList = ({category, title}) => {
 
     const [movies, setMovies] = useState([]);
 
@@ -17,11 +17,8 @@ const MoviesGrid = ({title, link, category}) => {
     }, [])
 
     return (
-        <section className="movies-section">
-            <header className="movies-section-header">
-                <h2 className="category-name">{title}</h2>
-                <Link to={`${link}`} className="category-link">See all</Link>
-            </header>
+        <div className="specific-movies-container">
+            <h2 className="section-title">{title}</h2>
             <div className="movies-container">
                 {movies.map(movie => <MovieItem 
                 title = {movie.title}
@@ -30,8 +27,8 @@ const MoviesGrid = ({title, link, category}) => {
                 key = {movie.id}
                 />)}
             </div>
-        </section>
+        </div>
     )
 }
 
-export default MoviesGrid;
+export default SpecificMoviesList;

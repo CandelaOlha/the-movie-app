@@ -1,0 +1,7 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset";
+
+.upcoming-movies {
+  @include main-section();
+}
