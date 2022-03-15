@@ -32,5 +32,21 @@
         @include cta($color-primary, $color-primary-hover);
       }
     }
+    .search-results {
+      max-width: $section-max-width;
+      padding: 80px 0 0;
+      width: 100%;
+      .search-results-title {
+        @include section-title();
+        .searched-title {
+          font-weight: 400;
+        }
+      }
+      .movies-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
   }
 }

@@ -2,10 +2,12 @@ import "../styles/Search.scss";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { apiKey } from "../aux/GlobalVariables";
+import MovieItem from "./MovieItem";
 
 const Search = () => {
 
     const [inputValue, setInputValue] = useState("");
+    const [movies, setMovies] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams({
         query: "",
     })
@@ -13,7 +15,7 @@ const Search = () => {
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchParams.get("query")}`)
         .then(res => res.json())
-        .then(data => console.log(data.results))
+        .then(data => setMovies(data.results))
     }, [searchParams])
 
     const handleChange = (e) => {
@@ -44,6 +46,19 @@ const Search = () => {
                     </label>
                     <input type="submit" value="Search" className="search-button"></input>
                 </form>
+                {movies && 
+                <div className="search-results">
+                    <h2 className="search-results-title">Based on your search: <span className="searched-title">{inputValue}</span></h2>
+                    <div className="movies-container">
+                        {movies.map(movie => <MovieItem 
+                        title = {movie.title}
+                        img = {`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                        id = {movie.id}
+                        key = {movie.id}
+                        />)}
+                    </div>
+                </div>
+                }
             </div>
         </main>
     )
