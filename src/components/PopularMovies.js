@@ -1,6 +1,14 @@
+import "../styles/PopularMovies.scss";
+import SpecificMoviesList from "./SpecificMoviesList";
+
 const PopularMovies = () => {
     return (
-        <div></div>
+        <main className="popular-movies">
+            <SpecificMoviesList 
+            category = "popular"
+            title = "Popular movies"
+            />
+        </main>
     )
 }
 
