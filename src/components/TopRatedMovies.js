@@ -1,6 +1,14 @@
+import "../styles/TopRatedMovies.scss";
+import SpecificMoviesList from "./SpecificMoviesList";
+
 const TopRatedMovies = () => {
     return (
-        <div></div>
+        <main className="top-rated-movies">
+            <SpecificMoviesList 
+            category = "top_rated"
+            title = "Top rated movies"
+            />
+        </main>
     )
 }
 

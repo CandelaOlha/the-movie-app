@@ -1,0 +1,7 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset";
+
+.top-rated-movies {
+  @include main-section();
+}
