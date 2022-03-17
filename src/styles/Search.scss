@@ -6,6 +6,7 @@
   @include main-section();
   .search-section-content-container {
     max-width: $section-max-width;
+    min-height: 50vh;
     padding: 0 40px 80px;
     width: 100%;
     .search-form {
@@ -32,20 +33,26 @@
         @include cta($color-primary, $color-primary-hover);
       }
     }
-    .search-results {
-      max-width: $section-max-width;
-      padding: 80px 0 0;
-      width: 100%;
-      .search-results-title {
-        @include section-title();
-        .searched-title {
-          font-weight: 400;
+    .movies-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-top: 80px;
+    }
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 740px) {
+  .search-section {
+    .search-section-content-container {
+      .search-form {
+        flex-direction: column;
+        .search-label {
+          width: 100%;
+          margin: 0 0 10px 0;
         }
-      }
-      .movies-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
       }
     }
   }

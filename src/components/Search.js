@@ -47,16 +47,13 @@ const Search = () => {
                     <input type="submit" value="Search" className="search-button"></input>
                 </form>
                 {movies && 
-                <div className="search-results">
-                    <h2 className="search-results-title">Based on your search: <span className="searched-title">{inputValue}</span></h2>
-                    <div className="movies-container">
-                        {movies.map(movie => <MovieItem 
-                        title = {movie.title}
-                        img = {`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                        id = {movie.id}
-                        key = {movie.id}
-                        />)}
-                    </div>
+                <div className="movies-container">
+                    {movies.map(movie => <MovieItem 
+                    title = {movie.title}
+                    img = {`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                    id = {movie.id}
+                    key = {movie.id}
+                    />)}
                 </div>
                 }
             </div>
