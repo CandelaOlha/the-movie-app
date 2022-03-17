@@ -1,0 +1,59 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset.scss";
+
+.search-section {
+  @include main-section();
+  .search-section-content-container {
+    max-width: $section-max-width;
+    min-height: 50vh;
+    padding: 0 40px 80px;
+    width: 100%;
+    .search-form {
+      align-items: flex-end;
+      display: flex;
+      .search-label {
+        color: $color-dark;
+        display: flex;
+        font-size: 24px;
+        font-weight: 600;
+        flex-direction: column;
+        margin-right: 10px;
+        width: 60%;
+        .search-input {
+          border: 1px solid $color-grey;
+          border-radius: $border-radius;
+          color: $color-dark;
+          font-size: 16px;
+          margin-top: 10px;
+          padding: 16px 32px;
+        }
+      }
+      .search-button {
+        @include cta($color-primary, $color-primary-hover);
+      }
+    }
+    .movies-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-top: 80px;
+    }
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 740px) {
+  .search-section {
+    .search-section-content-container {
+      .search-form {
+        flex-direction: column;
+        .search-label {
+          width: 100%;
+          margin: 0 0 10px 0;
+        }
+      }
+    }
+  }
+}
