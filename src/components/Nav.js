@@ -1,8 +1,34 @@
 import "../styles/Nav.scss";
 import { Link } from "react-router-dom";
 import logo from "../logo.svg";
+import { useState } from "react";
+import HamburgerMenu from "./HamburgerMenu";
+import MobileMenu from "./MobileMenu";
 
 const Nav = () => {
+
+    const [mobileMenu, setMobileMenu] = useState(false);
+
+    const handleClickMobileMenu = () => {
+        mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
+    }
+
+    const handleClickUpcoming = () => { // Código repetitivo. Ver si hay alguna forma de hacerlo mejor.
+        setMobileMenu(false);
+    }
+
+    const handleClickTopRated = () => {
+        setMobileMenu(false);
+    }
+
+    const handleClickPopular = () => {
+        setMobileMenu(false);
+    }
+
+    const handleClickSearch = () => {
+        setMobileMenu(false);
+    }
+
     return (
         <header className="navbar-header">
             <nav className="navbar">
@@ -22,6 +48,17 @@ const Nav = () => {
                     </li>
                 </ul>
                 <Link to="/search" className="search-button">Search</Link>
+                <HamburgerMenu 
+                mobileMenu = {mobileMenu}
+                handleClickMobileMenu = {handleClickMobileMenu}
+                />
+                <MobileMenu 
+                mobileMenu = {mobileMenu}
+                handleClickUpcoming = {handleClickUpcoming}
+                handleClickTopRated = {handleClickTopRated}
+                handleClickPopular = {handleClickPopular}
+                handleClickSearch = {handleClickSearch}
+                />
             </nav>
         </header>
     )

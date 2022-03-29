@@ -1,0 +1,49 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset.scss";
+
+.hamburger-menu {
+  align-items: flex-end;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-around;
+  z-index: 2;
+  .line {
+    background-color: $color-light;
+    height: 2px;
+    transition: 0.5s;
+  }
+  .line-one {
+    width: 30px;
+  }
+  .line-two {
+    width: 20px;
+  }
+  .line-one-closed {
+    transform: rotate(45deg);
+  }
+  .line-two-closed {
+    position: relative;
+    top: -2px;
+    transform: rotate(-45deg);
+    width: 30px;
+  }
+}
+.hamburger-menu-closed {
+  align-items: center;
+  justify-content: stretch;
+}
+
+// La animación del mobile-menu la implementé hace poquito en mi portfolio. Me lo traje de ahí!
+
+// Responsive
+
+@media screen and (max-width: 790px) {
+  .hamburger-menu {
+    display: flex;
+  }
+}

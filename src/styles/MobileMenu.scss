@@ -1,0 +1,36 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset";
+
+.mobile-menu-container {
+  background-color: $color-dark;
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 0.5s ease-in-out;
+  width: 100%;
+  z-index: 1;
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    .mobile-menu-item {
+      border-bottom: 1px solid $color-grey;
+      list-style-type: none;
+      padding: 20px 0;
+      .mobile-menu-link {
+        color: $color-light;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.show-mobile-menu-container {
+  height: 100vh;
+  padding: 40px;
+}
