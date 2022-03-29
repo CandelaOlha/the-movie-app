@@ -1,8 +1,16 @@
 import "../styles/Nav.scss";
 import { Link } from "react-router-dom";
 import logo from "../logo.svg";
+import { useState } from "react";
 
 const Nav = () => {
+
+    const [mobileMenu, setMobileMenu] = useState(false);
+
+    const handleClick = () => {
+        setMobileMenu(true);
+    }
+
     return (
         <header className="navbar-header">
             <nav className="navbar">
@@ -22,11 +30,11 @@ const Nav = () => {
                     </li>
                 </ul>
                 <Link to="/search" className="search-button">Search</Link>
-                <button className="hamburger-menu">
+                <button className="hamburger-menu" onClick={handleClick}>
                     <span className="line line-one"></span>
                     <span className="line line-two"></span>
                 </button>
-                <div className="mobile-menu-container">
+                <div className={`mobile-menu-container ${mobileMenu && "show-mobile-menu-container"}`}>
                     <ul className="mobile-menu">
                         <li className="mobile-menu-item">
                             <Link to="/upcoming-movies" className="mobile-menu-link">Upcoming</Link>
