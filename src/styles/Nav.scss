@@ -44,5 +44,43 @@
     .search-button {
       @include cta($color-primary, $color-primary-hover);
     }
+    .hamburger-menu {
+      align-items: flex-end;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: none;
+      flex-direction: column;
+      height: 20px;
+      justify-content: space-around;
+      z-index: 2;
+      .line {
+        background-color: $color-light;
+        height: 2px;
+        transition: 0.5s;
+      }
+      .line-one {
+        width: 40px;
+      }
+      .line-two {
+        width: 25px;
+      }
+    }
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 790px) {
+  .navbar-header {
+    .navbar {
+      .nav-menu,
+      .search-button {
+        display: none;
+      }
+      .hamburger-menu {
+        display: flex;
+      }
+    }
   }
 }

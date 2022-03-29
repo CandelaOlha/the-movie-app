@@ -22,6 +22,10 @@ const Nav = () => {
                     </li>
                 </ul>
                 <Link to="/search" className="search-button">Search</Link>
+                <button className="hamburger-menu">
+                    <span className="line line-one"></span>
+                    <span className="line line-two"></span>
+                </button>
             </nav>
         </header>
     )
