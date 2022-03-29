@@ -26,6 +26,22 @@ const Nav = () => {
                     <span className="line line-one"></span>
                     <span className="line line-two"></span>
                 </button>
+                <div className="mobile-menu-container">
+                    <ul className="mobile-menu">
+                        <li className="mobile-menu-item">
+                            <Link to="/upcoming-movies" className="mobile-menu-link">Upcoming</Link>
+                        </li>
+                        <li className="mobile-menu-item">
+                            <Link to="/top-rated-movies" className="mobile-menu-link">Top rated</Link>
+                        </li>
+                        <li className="mobile-menu-item">
+                            <Link to="/popular-movies" className="mobile-menu-link">Popular</Link>
+                        </li>
+                        <li className="mobile-menu-item">
+                            <Link to="/search" className="mobile-menu-link">Search</Link>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </header>
     )
