@@ -2,6 +2,7 @@ import "../styles/Nav.scss";
 import { Link } from "react-router-dom";
 import logo from "../logo.svg";
 import { useState } from "react";
+import HamburgerMenu from "./HamburgerMenu";
 import MobileMenu from "./MobileMenu";
 
 const Nav = () => {
@@ -47,10 +48,10 @@ const Nav = () => {
                     </li>
                 </ul>
                 <Link to="/search" className="search-button">Search</Link>
-                <button className={`hamburger-menu ${mobileMenu && "hamburger-menu-closed"}`} onClick={handleClickMobileMenu}>
-                    <span className={`line line-one ${mobileMenu && "line-one-closed"}`}></span>
-                    <span className={`line line-two ${mobileMenu && "line-two-closed"}`}></span>
-                </button>
+                <HamburgerMenu 
+                mobileMenu = {mobileMenu}
+                handleClickMobileMenu = {handleClickMobileMenu}
+                />
                 <MobileMenu 
                 mobileMenu = {mobileMenu}
                 handleClickUpcoming = {handleClickUpcoming}
