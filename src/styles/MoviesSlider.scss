@@ -1,0 +1,12 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset";
+
+.slick-slider {
+  height: 60vh;
+  margin-bottom: 80px;
+  width: 100%;
+  .slick-list {
+    height: 100%;
+  }
+}

@@ -4,4 +4,6 @@
 
 .movies {
   @include main-section();
+  flex-direction: column;
+  padding-top: 0;
 }
