@@ -61,11 +61,24 @@
         transition: 0.5s;
       }
       .line-one {
-        width: 40px;
+        width: 30px;
       }
       .line-two {
-        width: 25px;
+        width: 20px;
       }
+      .line-one-closed {
+        transform: rotate(45deg);
+      }
+      .line-two-closed {
+        position: relative;
+        top: -2px;
+        transform: rotate(-45deg);
+        width: 30px;
+      }
+    }
+    .hamburger-menu-closed {
+      align-items: center;
+      justify-content: stretch;
     }
     .mobile-menu-container {
       background-color: $color-dark;

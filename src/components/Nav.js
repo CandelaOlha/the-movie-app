@@ -8,7 +8,7 @@ const Nav = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
 
     const handleClick = () => {
-        setMobileMenu(true);
+        mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
     }
 
     return (
@@ -30,9 +30,9 @@ const Nav = () => {
                     </li>
                 </ul>
                 <Link to="/search" className="search-button">Search</Link>
-                <button className="hamburger-menu" onClick={handleClick}>
-                    <span className="line line-one"></span>
-                    <span className="line line-two"></span>
+                <button className={`hamburger-menu ${mobileMenu && "hamburger-menu-closed"}`} onClick={handleClick}>
+                    <span className={`line line-one ${mobileMenu && "line-one-closed"}`}></span>
+                    <span className={`line line-two ${mobileMenu && "line-two-closed"}`}></span>
                 </button>
                 <div className={`mobile-menu-container ${mobileMenu && "show-mobile-menu-container"}`}>
                     <ul className="mobile-menu">
