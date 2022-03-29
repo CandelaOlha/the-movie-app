@@ -7,8 +7,24 @@ const Nav = () => {
 
     const [mobileMenu, setMobileMenu] = useState(false);
 
-    const handleClick = () => {
+    const handleClickMobileMenu = () => {
         mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
+    }
+
+    const handleClickUpcoming = () => { // Código repetitivo. Ver si hay alguna forma de hacerlo mejor.
+        setMobileMenu(false);
+    }
+
+    const handleClickTopRated = () => {
+        setMobileMenu(false);
+    }
+
+    const handleClickPopular = () => {
+        setMobileMenu(false);
+    }
+
+    const handleClickSearch = () => {
+        setMobileMenu(false);
     }
 
     return (
@@ -30,23 +46,23 @@ const Nav = () => {
                     </li>
                 </ul>
                 <Link to="/search" className="search-button">Search</Link>
-                <button className={`hamburger-menu ${mobileMenu && "hamburger-menu-closed"}`} onClick={handleClick}>
+                <button className={`hamburger-menu ${mobileMenu && "hamburger-menu-closed"}`} onClick={handleClickMobileMenu}>
                     <span className={`line line-one ${mobileMenu && "line-one-closed"}`}></span>
                     <span className={`line line-two ${mobileMenu && "line-two-closed"}`}></span>
                 </button>
                 <div className={`mobile-menu-container ${mobileMenu && "show-mobile-menu-container"}`}>
                     <ul className="mobile-menu">
                         <li className="mobile-menu-item">
-                            <Link to="/upcoming-movies" className="mobile-menu-link">Upcoming</Link>
+                            <Link to="/upcoming-movies" className="mobile-menu-link" onClick={handleClickUpcoming}>Upcoming</Link>
                         </li>
                         <li className="mobile-menu-item">
-                            <Link to="/top-rated-movies" className="mobile-menu-link">Top rated</Link>
+                            <Link to="/top-rated-movies" className="mobile-menu-link" onClick={handleClickTopRated}>Top rated</Link>
                         </li>
                         <li className="mobile-menu-item">
-                            <Link to="/popular-movies" className="mobile-menu-link">Popular</Link>
+                            <Link to="/popular-movies" className="mobile-menu-link" onClick={handleClickPopular}>Popular</Link>
                         </li>
                         <li className="mobile-menu-item">
-                            <Link to="/search" className="mobile-menu-link">Search</Link>
+                            <Link to="/search" className="mobile-menu-link" onClick={handleClickSearch}>Search</Link>
                         </li>
                     </ul>
                 </div>
