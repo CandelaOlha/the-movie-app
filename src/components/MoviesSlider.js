@@ -2,10 +2,25 @@ import "../styles/MoviesSlider.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import MovieBanner from "./MovieBanner";
+import { useState, useEffect } from "react";
+import { baseUrl, apiKey } from "../aux/GlobalVariables";
 
 const MoviesSlider = () => {
 
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+      fetch(`${baseUrl}top_rated?api_key=${apiKey}&page=1`)
+      .then(res => res.json())
+      .then(data => {
+          setMovies(data.results)
+      })
+  }, [])
+
   const settings = {
+    arrows: false,
+    autoplay: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -14,28 +29,13 @@ const MoviesSlider = () => {
   };
 
   return (
-    <div>
-        <Slider {...settings}>
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-        </Slider>
-    </div>
+    <Slider {...settings}>
+      {movies.map(movie => <MovieBanner 
+      title = {movie.title}
+      img = {`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+      key = {movie.id}
+      />)}
+    </Slider>
   )
 }
 
