@@ -2,6 +2,7 @@ import "../styles/Nav.scss";
 import { Link } from "react-router-dom";
 import logo from "../logo.svg";
 import { useState } from "react";
+import MobileMenu from "./MobileMenu";
 
 const Nav = () => {
 
@@ -50,22 +51,13 @@ const Nav = () => {
                     <span className={`line line-one ${mobileMenu && "line-one-closed"}`}></span>
                     <span className={`line line-two ${mobileMenu && "line-two-closed"}`}></span>
                 </button>
-                <div className={`mobile-menu-container ${mobileMenu && "show-mobile-menu-container"}`}>
-                    <ul className="mobile-menu">
-                        <li className="mobile-menu-item">
-                            <Link to="/upcoming-movies" className="mobile-menu-link" onClick={handleClickUpcoming}>Upcoming</Link>
-                        </li>
-                        <li className="mobile-menu-item">
-                            <Link to="/top-rated-movies" className="mobile-menu-link" onClick={handleClickTopRated}>Top rated</Link>
-                        </li>
-                        <li className="mobile-menu-item">
-                            <Link to="/popular-movies" className="mobile-menu-link" onClick={handleClickPopular}>Popular</Link>
-                        </li>
-                        <li className="mobile-menu-item">
-                            <Link to="/search" className="mobile-menu-link" onClick={handleClickSearch}>Search</Link>
-                        </li>
-                    </ul>
-                </div>
+                <MobileMenu 
+                mobileMenu = {mobileMenu}
+                handleClickUpcoming = {handleClickUpcoming}
+                handleClickTopRated = {handleClickTopRated}
+                handleClickPopular = {handleClickPopular}
+                handleClickSearch = {handleClickSearch}
+                />
             </nav>
         </header>
     )
