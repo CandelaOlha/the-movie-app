@@ -7,12 +7,13 @@
   .page-not-found-container {
     display: flex;
     max-width: $section-max-width;
-    padding: 65px 80px;
+    padding: 80px 40px;
     width: 100%;
     .image-container {
       align-items: center;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      padding-right: 20px;
       width: 50%;
       img {
         max-width: 100%;
@@ -31,6 +32,37 @@
       }
       .homepage-link {
         @include cta($color-primary, $color-primary-hover);
+      }
+    }
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 692px) {
+  .page-not-found {
+    .page-not-found-container {
+      flex-direction: column;
+      padding: 0 40px 80px;
+      .image-container {
+        margin-bottom: 40px;
+        padding-right: 0;
+        width: 100%;
+      }
+      .text-container {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .page-not-found {
+    .page-not-found-container {
+      .text-container {
+        .main-title {
+          font-size: 24px;
+        }
       }
     }
   }
