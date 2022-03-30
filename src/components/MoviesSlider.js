@@ -10,7 +10,7 @@ const MoviesSlider = () => {
 
   const movies = useFetchMovies(popularMoviesUrl);
 
-  console.log(movies);
+  const selectedMovies = movies.slice(0, 5);
 
   const settings = {
     arrows: false,
@@ -24,7 +24,7 @@ const MoviesSlider = () => {
 
   return (
     <Slider {...settings}>
-      {movies.map(movie => <MovieBanner 
+      {selectedMovies.map(movie => <MovieBanner 
       img = {`${imgUrl}${movie.backdrop_path}`}
       title = {movie.title}
       id = {movie.id}
