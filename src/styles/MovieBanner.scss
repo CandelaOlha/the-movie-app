@@ -22,6 +22,7 @@
       .movie-title {
         font-size: 48px;
         font-weight: 600;
+        line-height: 1.2;
         margin-bottom: 20px;
       }
       .cta {
@@ -35,6 +36,20 @@
         }
         .cta-text {
           font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 420px) {
+  .banner-img-container {
+    .overlay {
+      .content-container {
+        .movie-title {
+          font-size: 36px;
         }
       }
     }

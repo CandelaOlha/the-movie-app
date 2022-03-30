@@ -15,4 +15,19 @@
       }
     }
   }
+  .slick-dots {
+    bottom: 25px;
+    li {
+      button::before {
+        color: $color-light;
+        opacity: 0.4;
+      }
+    }
+    .slick-active {
+      button::before {
+        color: $color-light;
+        opacity: 1;
+      }
+    }
+  }
 }
