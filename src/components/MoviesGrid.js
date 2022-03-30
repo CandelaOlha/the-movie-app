@@ -1,20 +1,11 @@
 import "../styles/MoviesGrid.scss";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { baseUrl, apiKey } from "../aux/GlobalVariables";
+import useFetchMovies from "../hooks/useFetchMovies";
 import MovieItem from "./MovieItem";
 
-const MoviesGrid = ({title, link, category}) => {
+const MoviesGrid = ({url, link, title}) => {
 
-    const [movies, setMovies] = useState([]);
-
-    useEffect(() => {
-        fetch(`${baseUrl}${category}?api_key=${apiKey}&page=1`)
-        .then(res => res.json())
-        .then(data => {
-            setMovies(data.results)
-        })
-    }, [])
+    const movies = useFetchMovies(url);
 
     return (
         <section className="movies-section">

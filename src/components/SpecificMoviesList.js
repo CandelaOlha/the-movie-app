@@ -1,20 +1,10 @@
 import "../styles/SpecificMoviesList.scss";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { baseUrl, apiKey } from "../aux/GlobalVariables";
+import useFetchMovies from "../hooks/useFetchMovies";
 import MovieItem from "./MovieItem";
 
-const SpecificMoviesList = ({category, title}) => {
+const SpecificMoviesList = ({url, title}) => {
 
-    const [movies, setMovies] = useState([]);
-
-    useEffect(() => {
-        fetch(`${baseUrl}${category}?api_key=${apiKey}&page=1`)
-        .then(res => res.json())
-        .then(data => {
-            setMovies(data.results)
-        })
-    }, [])
+    const movies = useFetchMovies(url);
 
     return (
         <div className="specific-movies-container">

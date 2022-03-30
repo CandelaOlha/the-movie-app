@@ -1,11 +1,12 @@
 import "../styles/PopularMovies.scss";
 import SpecificMoviesList from "./SpecificMoviesList";
+import { popularMoviesUrl } from "../aux/GlobalVariables";
 
 const PopularMovies = () => {
     return (
         <main className="popular-movies">
             <SpecificMoviesList 
-            category = "popular"
+            url = {popularMoviesUrl}
             title = "Popular movies"
             />
         </main>

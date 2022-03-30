@@ -9,13 +9,13 @@ const MovieDetails = () => {
     const [credits, setCredits] = useState([]);
 
     useEffect(() => {
-        fetch(`${baseUrl}${params.id}?api_key=${apiKey}`)
+        fetch(`${baseUrl}${params.id}?${apiKey}`)
         .then(res => res.json())
         .then(data => setMovie(data));
     }, [])
 
     useEffect(() => {
-        fetch(`${baseUrl}${params.id}/credits?api_key=${apiKey}`)
+        fetch(`${baseUrl}${params.id}/credits?${apiKey}`)
         .then(res => res.json())
         .then(data => setCredits(data))
     }, [])
