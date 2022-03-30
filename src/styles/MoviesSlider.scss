@@ -3,10 +3,31 @@
 @import "./reset";
 
 .slick-slider {
-  height: 60vh;
+  height: 65vh;
   margin-bottom: 80px;
   width: 100%;
   .slick-list {
     height: 100%;
+    .slick-track {
+      height: 100%;
+      div {
+        height: 100%;
+      }
+    }
+  }
+  .slick-dots {
+    bottom: 25px;
+    li {
+      button::before {
+        color: $color-light;
+        opacity: 0.4;
+      }
+    }
+    .slick-active {
+      button::before {
+        color: $color-light;
+        opacity: 1;
+      }
+    }
   }
 }

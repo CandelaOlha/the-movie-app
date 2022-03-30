@@ -1,3 +1,57 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 @import "./reset";
+
+.banner-img-container {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .overlay {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: $color-overlay;
+    .content-container {
+      color: $color-light;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: $section-max-width;
+      padding: 0 40px;
+      width: 100%;
+      .movie-title {
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+      .cta {
+        @include cta($color-grey-alternative, $color-light-grey);
+        align-items: center;
+        display: flex;
+        max-width: 235px;
+        .cta-icon {
+          font-size: 20px;
+          margin-right: 5px;
+        }
+        .cta-text {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 420px) {
+  .banner-img-container {
+    .overlay {
+      .content-container {
+        .movie-title {
+          font-size: 36px;
+        }
+      }
+    }
+  }
+}
