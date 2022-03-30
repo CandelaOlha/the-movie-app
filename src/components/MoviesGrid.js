@@ -6,7 +6,7 @@ import MovieItem from "./MovieItem";
 
 const MoviesGrid = ({title, link, category}) => {
 
-    const movies = useFetchMovies();
+    const movies = useFetchMovies(baseUrl, category, apiKey);
 
     return (
         <section className="movies-section">

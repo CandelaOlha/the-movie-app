@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
-const useFetchMovies = () => {
+const useFetchMovies = (baseUrl, category, apiKey) => {
 
     const [movies, setMovies] = useState([]);
 

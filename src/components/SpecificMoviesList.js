@@ -5,7 +5,7 @@ import MovieItem from "./MovieItem";
 
 const SpecificMoviesList = ({category, title}) => {
 
-    const movies = useFetchMovies();
+    const movies = useFetchMovies(baseUrl, category, apiKey);
 
     return (
         <div className="specific-movies-container">
