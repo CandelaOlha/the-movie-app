@@ -2,23 +2,13 @@ import "../styles/MoviesSlider.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { popularMoviesUrl } from "../aux/GlobalVariables";
+import useFetchMovies from "../hooks/useFetchMovies";
 import MovieBanner from "./MovieBanner";
-import { useState, useEffect } from "react";
-import { baseUrl, apiKey, currentPage } from "../aux/GlobalVariables";
 
 const MoviesSlider = () => {
 
-  const [movies, setMovies] = useState([]);
-
-  const category = "top_rated"
-
-  useEffect(() => {
-      fetch(`${baseUrl}${category}?${apiKey}${currentPage}1`)
-      .then(res => res.json())
-      .then(data => {
-          setMovies(data.results)
-      })
-  }, [])
+  const movies = useFetchMovies(popularMoviesUrl);
 
   const settings = {
     arrows: false,
