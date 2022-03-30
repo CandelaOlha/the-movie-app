@@ -1,23 +1,24 @@
 import "../styles/MainView.scss";
 import MoviesGrid from "./MoviesGrid";
+import { upcomingMoviesUrl, topRatedMoviesUrl, popularMoviesUrl } from "../aux/GlobalVariables";
 
 const MainView = () => {
     return (
         <div className="movies-grid-container">
             <MoviesGrid
-            title = "Upcoming Movies"
+            url = {upcomingMoviesUrl}
             link = "upcoming-movies"
-            category = "upcoming"
+            title = "Upcoming Movies"
             />
             <MoviesGrid
-            title = "Top rated Movies"
+            url = {topRatedMoviesUrl}
             link = "top-rated-movies"
-            category = "top_rated"
+            title = "Top rated Movies"
             />
             <MoviesGrid
-            title = "Popular Movies"
+            url = {popularMoviesUrl}
             link = "popular-movies"
-            category = "popular"
+            title = "Popular Movies"
             />
         </div>
     )

@@ -4,14 +4,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MovieBanner from "./MovieBanner";
 import { useState, useEffect } from "react";
-import { baseUrl, apiKey } from "../aux/GlobalVariables";
+import { baseUrl, apiKey, currentPage } from "../aux/GlobalVariables";
 
 const MoviesSlider = () => {
 
   const [movies, setMovies] = useState([]);
 
+  const category = "top_rated"
+
   useEffect(() => {
-      fetch(`${baseUrl}top_rated?api_key=${apiKey}&page=1`)
+      fetch(`${baseUrl}${category}?${apiKey}${currentPage}1`)
       .then(res => res.json())
       .then(data => {
           setMovies(data.results)

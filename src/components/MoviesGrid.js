@@ -1,12 +1,11 @@
 import "../styles/MoviesGrid.scss";
 import { Link } from "react-router-dom";
 import useFetchMovies from "../hooks/useFetchMovies";
-import { baseUrl, apiKey } from "../aux/GlobalVariables";
 import MovieItem from "./MovieItem";
 
-const MoviesGrid = ({title, link, category}) => {
+const MoviesGrid = ({url, link, title}) => {
 
-    const movies = useFetchMovies(baseUrl, category, apiKey);
+    const movies = useFetchMovies(url);
 
     return (
         <section className="movies-section">

@@ -1,11 +1,10 @@
 import "../styles/SpecificMoviesList.scss";
 import useFetchMovies from "../hooks/useFetchMovies";
-import { baseUrl, apiKey } from "../aux/GlobalVariables";
 import MovieItem from "./MovieItem";
 
-const SpecificMoviesList = ({category, title}) => {
+const SpecificMoviesList = ({url, title}) => {
 
-    const movies = useFetchMovies(baseUrl, category, apiKey);
+    const movies = useFetchMovies(url);
 
     return (
         <div className="specific-movies-container">

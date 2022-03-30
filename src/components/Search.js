@@ -1,7 +1,7 @@
 import "../styles/Search.scss";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { apiKey } from "../aux/GlobalVariables";
+import { searchUrl } from "../aux/GlobalVariables";
 import MovieItem from "./MovieItem";
 
 const Search = () => {
@@ -13,7 +13,7 @@ const Search = () => {
     })
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchParams.get("query")}`)
+        fetch(`${searchUrl}&query=${searchParams.get("query")}`)
         .then(res => res.json())
         .then(data => setMovies(data.results))
     }, [searchParams])

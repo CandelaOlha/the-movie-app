@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-const useFetchMovies = (baseUrl, category, apiKey) => {
+const useFetchMovies = (url) => {
 
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        fetch(`${baseUrl}${category}?api_key=${apiKey}&page=1`)
+        fetch(`${url}1`)
         .then(res => res.json())
         .then(data => {
             setMovies(data.results)
