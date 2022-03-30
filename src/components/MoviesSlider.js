@@ -2,13 +2,15 @@ import "../styles/MoviesSlider.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { popularMoviesUrl } from "../aux/GlobalVariables";
+import { popularMoviesUrl, imgUrl } from "../aux/GlobalVariables";
 import useFetchMovies from "../hooks/useFetchMovies";
 import MovieBanner from "./MovieBanner";
 
 const MoviesSlider = () => {
 
   const movies = useFetchMovies(popularMoviesUrl);
+
+  console.log(movies);
 
   const settings = {
     arrows: false,
@@ -23,8 +25,9 @@ const MoviesSlider = () => {
   return (
     <Slider {...settings}>
       {movies.map(movie => <MovieBanner 
+      img = {`${imgUrl}${movie.backdrop_path}`}
       title = {movie.title}
-      img = {`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+      id = {movie.id}
       key = {movie.id}
       />)}
     </Slider>

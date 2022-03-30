@@ -27,9 +27,9 @@
   }
 }
 
-@mixin link {
-  border-bottom: 1px solid $color-primary;
-  color: $color-primary;
+@mixin link($border-bottom-color, $color) {
+  border-bottom: 1px solid $border-bottom-color;
+  color: $color;
   padding-bottom: 5px;
   text-decoration: none;
   transition: 0.1s;

@@ -14,7 +14,7 @@
       @include section-title();
     }
     .category-link {
-      @include link();
+      @include link($color-primary, $color-primary);
     }
   }
   .movies-container {
