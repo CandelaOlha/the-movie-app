@@ -11,7 +11,7 @@ const MoviesGrid = ({url, link, title}) => {
     const movies = useFetchMovies(url);
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 500,
         slidesToShow: 4,
@@ -51,7 +51,7 @@ const MoviesGrid = ({url, link, title}) => {
                 <h2 className="category-name">{title}</h2>
                 <Link to={`${link}`} className="category-link">See all</Link>
             </header>
-            <Slider {...settings}>
+            <Slider {...settings} className="secondary-slider">
                 {movies.map(movie => <MovieItem 
                 title = {movie.title}
                 img = {`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
