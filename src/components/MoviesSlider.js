@@ -23,7 +23,7 @@ const MoviesSlider = () => {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider {...settings} className="main-slider">
       {selectedMovies.map(movie => <MovieBanner 
       img = {`${imgUrl}${movie.backdrop_path}`}
       title = {movie.title}

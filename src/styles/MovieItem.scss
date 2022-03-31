@@ -6,8 +6,8 @@
   color: $color-dark;
   text-decoration: none;
   .movie-details {
-    margin: 0 10px 60px;
-    max-width: 200px;
+    margin: 0 10px 40px;
+    width: 120px; // Estos estilos no se están aplicando.
     .movie-img {
       border-radius: $border-radius;
     }

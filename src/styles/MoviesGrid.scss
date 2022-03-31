@@ -17,8 +17,14 @@
       @include link($color-primary, $color-primary);
     }
   }
-  .movies-container {
-    display: flex;
-    overflow: scroll;
+  .secondary-slider {
+    .slick-arrow {
+      top: 35%;
+    }
+    .slick-arrow::before {
+      color: $color-dark;
+      font-size: 30px;
+      opacity: 0.4;
+    }
   }
 }
