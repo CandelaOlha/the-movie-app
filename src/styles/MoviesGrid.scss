@@ -31,31 +31,8 @@
     .slick-track {
       display: flex;
     }
-  }
-}
-
-// Responsive
-
-@media screen and (max-width: 480px) {
-  .movies-section {
-    .slick-list {
-      .slick-track {
-        .slick-slide {
-          width: 160px;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .movies-section {
-    .slick-list {
-      .slick-track {
-        .slick-slide {
-          width: 120px;
-        }
-      }
+    .slick-slice {
+      max-width: 200px;
     }
   }
 }
