@@ -42,8 +42,9 @@ const MoviesGrid = ({url, link, title}) => {
             {
                 breakpoint: 480,
                 settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
+                arrows: false,
+                slidesToShow: 2,
+                slidesToScroll: 2
                 }
             }
             ]
