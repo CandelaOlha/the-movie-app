@@ -17,8 +17,8 @@
       @include link($color-primary, $color-primary);
     }
   }
-  .movies-container {
-    display: flex;
-    overflow: scroll;
-  }
+  // .movies-container {
+  //   display: flex;
+  //   overflow: scroll;
+  // }
 }
