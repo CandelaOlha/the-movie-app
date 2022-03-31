@@ -27,4 +27,12 @@
       opacity: 0.4;
     }
   }
+  .slick-list {
+    .slick-track {
+      display: flex;
+    }
+    .slick-slice {
+      max-width: 200px;
+    }
+  }
 }

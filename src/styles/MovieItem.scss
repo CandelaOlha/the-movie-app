@@ -5,11 +5,12 @@
 .movie-link {
   color: $color-dark;
   text-decoration: none;
+  max-width: 100%;
   .movie-details {
-    margin: 0 10px 60px;
-    max-width: 200px;
+    margin: 0 10px;
     .movie-img {
       border-radius: $border-radius;
+      max-width: 100%;
     }
     .movie-name {
       line-height: 1.6;
