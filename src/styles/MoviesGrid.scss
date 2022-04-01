@@ -19,12 +19,19 @@
   }
   .secondary-slider {
     .slick-arrow {
+      opacity: 1;
       top: 35%;
+      z-index: 1;
     }
     .slick-arrow::before {
-      color: $color-dark;
-      font-size: 30px;
-      opacity: 0.4;
+      color: $color-light;
+      font-size: 40px;
+    }
+    .slick-prev {
+      left: 15px;
+    }
+    .slick-next {
+      right: 35px;
     }
   }
   .slick-list {

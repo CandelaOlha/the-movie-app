@@ -21,6 +21,7 @@ const MoviesGrid = ({url, link, title}) => {
             {
                 breakpoint: 1024,
                 settings: {
+                arrows: false,
                 slidesToShow: 4,
                 slidesToScroll: 4
                 }
@@ -28,6 +29,7 @@ const MoviesGrid = ({url, link, title}) => {
             {
                 breakpoint: 700,
                 settings: {
+                arrows: false,
                 slidesToShow: 3,
                 slidesToScroll: 3,
                 }
@@ -37,7 +39,7 @@ const MoviesGrid = ({url, link, title}) => {
                 settings: {
                 arrows: false,
                 slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToScroll: 2,
                 }
             }
             ]
