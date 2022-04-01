@@ -1,0 +1,39 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset";
+
+.movie-trailer-modal {
+    align-items: center;
+    background-color: $color-dark;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    .close-modal {
+        cursor: pointer;
+        position: fixed;
+        right: 10%;
+        top: 10%;
+        .icon {
+            font-size: 20px;
+        }
+    }
+    .video {
+        height: 60%;
+        width: 60%; 
+    }
+}
+
+// Responsive
+
+@media screen and (max-width: 800px) {
+    .movie-trailer-modal {
+        .video {
+            height: 40%;
+            width: 80%;
+        }
+    }
+}
