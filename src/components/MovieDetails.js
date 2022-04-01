@@ -51,7 +51,12 @@ const MovieDetails = () => {
             }
             
         }
-        return directorsNames.join(", ");
+        if (directorsNames.join(", ") !== "") {
+            return directorsNames.join(", ");
+        }
+        else {
+            return "-";
+        }
     }
 
     const handleClickOpenModal = () => {
@@ -66,15 +71,26 @@ const MovieDetails = () => {
         <main className="specific-movie-details-container">
             <div className="specific-movie-details">
                 <div className="movie-image-container">
-                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="movie-image" />
+                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                alt={`${movie.title}`} 
+                className="movie-image" 
+                />
                 </div>
                 <div className="movie-details-text-container">
                     <h1 className="movie-name">{movie.title}</h1>
                     <p className="movie-description">{movie.overview}</p>
-                    <p className="movie-info">{movie.release_date && getMovieYear(movie)} • {movie.genres && movie.genres[0].name} • {movie.runtime} min</p>
+                    <p className="movie-info">
+                        {movie.release_date && getMovieYear(movie)} • {movie.genres && movie.genres[0].name} • {movie.runtime} min
+                    </p>
                     <div className="crew-info">
-                        <p className="cast"><span className="title">Starring:</span> {credits.cast && getCast(credits.cast)}...</p>
-                        <p className="directors"><span className="title">Directed by:</span> {credits.crew && getDirectors(credits.crew)}</p>
+                        <p className="cast">
+                            <span className="title">Starring: </span> 
+                            {credits.cast && getCast(credits.cast)}...
+                        </p>
+                        <p className="directors">
+                            <span className="title">Directed by: </span> 
+                            {credits.crew && getDirectors(credits.crew)}
+                        </p>
                     </div>
                     <button className="cta" onClick={handleClickOpenModal}>Watch trailer</button>
                 </div>

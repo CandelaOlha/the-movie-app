@@ -8,17 +8,17 @@ const MainView = () => {
             <MoviesGrid
             url = {upcomingMoviesUrl}
             link = "upcoming-movies"
-            title = "Upcoming Movies"
+            title = "Upcoming movies"
             />
             <MoviesGrid
             url = {topRatedMoviesUrl}
             link = "top-rated-movies"
-            title = "Top rated Movies"
+            title = "Top rated movies"
             />
             <MoviesGrid
             url = {popularMoviesUrl}
             link = "popular-movies"
-            title = "Popular Movies"
+            title = "Popular movies"
             />
         </div>
     )
