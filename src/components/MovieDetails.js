@@ -51,7 +51,12 @@ const MovieDetails = () => {
             }
             
         }
-        return directorsNames.join(", ");
+        if (directorsNames.join(", ") !== "") {
+            return directorsNames.join(", ");
+        }
+        else {
+            return "-";
+        }
     }
 
     const handleClickOpenModal = () => {
@@ -75,17 +80,15 @@ const MovieDetails = () => {
                     <h1 className="movie-name">{movie.title}</h1>
                     <p className="movie-description">{movie.overview}</p>
                     <p className="movie-info">
-                        {movie.release_date && getMovieYear(movie)} • 
-                        {movie.genres && movie.genres[0].name} • 
-                        {movie.runtime} min
+                        {movie.release_date && getMovieYear(movie)} • {movie.genres && movie.genres[0].name} • {movie.runtime} min
                     </p>
                     <div className="crew-info">
                         <p className="cast">
-                            <span className="title">Starring:</span> 
+                            <span className="title">Starring: </span> 
                             {credits.cast && getCast(credits.cast)}...
                         </p>
                         <p className="directors">
-                            <span className="title">Directed by:</span> 
+                            <span className="title">Directed by: </span> 
                             {credits.crew && getDirectors(credits.crew)}
                         </p>
                     </div>
