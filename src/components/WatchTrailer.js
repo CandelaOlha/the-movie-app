@@ -8,10 +8,8 @@ const WatchTrailer = ({videoKey, handleClickCloseModal}) => {
                 <GrClose aria-label="close-modal" className="icon"/>
             </button>
             <iframe 
-            width="60%" 
-            height="60%" 
-            src={`https://www.youtube.com/embed/${videoKey}`}
-            >
+            src={`https://www.youtube.com/embed/${videoKey}`} 
+            className="video">
             </iframe>
         </div>
     )

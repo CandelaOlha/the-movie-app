@@ -21,4 +21,19 @@
             font-size: 20px;
         }
     }
+    .video {
+        height: 60%;
+        width: 60%; 
+    }
+}
+
+// Responsive
+
+@media screen and (max-width: 800px) {
+    .movie-trailer-modal {
+        .video {
+            height: 40%;
+            width: 80%;
+        }
+    }
 }
