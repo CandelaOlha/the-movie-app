@@ -2,11 +2,13 @@ import "../styles/MovieDetails.scss";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { baseUrl, apiKey } from "../aux/GlobalVariables";
+import WatchTrailer from "./WatchTrailer";
 
 const MovieDetails = () => {
     const params = useParams();
     const [movie, setMovie] = useState([]);
     const [credits, setCredits] = useState([]);
+    const [watchTrailer, setWatchTrailer] = useState(false);
 
     useEffect(() => {
         fetch(`${baseUrl}${params.id}?${apiKey}`)
@@ -45,6 +47,10 @@ const MovieDetails = () => {
         return directorsNames.join(", ");
     }
 
+    const handleClick = () => {
+        setWatchTrailer(true);
+    }
+
     return (
         <main className="specific-movie-details-container">
             <div className="specific-movie-details">
@@ -59,9 +65,10 @@ const MovieDetails = () => {
                         <p className="cast"><span className="title">Starring:</span> {credits.cast && getCast(credits.cast)}...</p>
                         <p className="directors"><span className="title">Directed by:</span> {credits.crew && getDirectors(credits.crew)}</p>
                     </div>
-                    <a href="" className="cta">Watch trailer</a>
+                    <button className="cta" onClick={handleClick}>Watch trailer</button>
                 </div>
             </div>
+            {watchTrailer && <WatchTrailer />}
         </main>
     )
 }
