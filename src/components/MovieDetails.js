@@ -47,8 +47,12 @@ const MovieDetails = () => {
         return directorsNames.join(", ");
     }
 
-    const handleClick = () => {
+    const handleClickOpenModal = () => {
         setWatchTrailer(true);
+    }
+
+    const handleClickCloseModal = () => {
+        setWatchTrailer(false);
     }
 
     return (
@@ -65,10 +69,12 @@ const MovieDetails = () => {
                         <p className="cast"><span className="title">Starring:</span> {credits.cast && getCast(credits.cast)}...</p>
                         <p className="directors"><span className="title">Directed by:</span> {credits.crew && getDirectors(credits.crew)}</p>
                     </div>
-                    <button className="cta" onClick={handleClick}>Watch trailer</button>
+                    <button className="cta" onClick={handleClickOpenModal}>Watch trailer</button>
                 </div>
             </div>
-            {watchTrailer && <WatchTrailer />}
+            {watchTrailer && <WatchTrailer 
+            handleClickCloseModal = {handleClickCloseModal}
+            />}
         </main>
     )
 }

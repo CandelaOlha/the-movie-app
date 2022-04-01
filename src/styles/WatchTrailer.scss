@@ -12,4 +12,13 @@
     position: fixed;
     right: 0;
     top: 0;
+    .close-modal {
+        cursor: pointer;
+        position: fixed;
+        right: 10%;
+        top: 10%;
+        .icon {
+            font-size: 20px;
+        }
+    }
 }
