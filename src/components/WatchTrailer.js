@@ -1,7 +1,7 @@
 import "../styles/WatchTrailer.scss";
 import { GrClose } from 'react-icons/gr';
 
-const WatchTrailer = ({handleClickCloseModal}) => {
+const WatchTrailer = ({videoKey, handleClickCloseModal}) => {
     return (
         <div className="movie-trailer-modal">
             <button className="close-modal" onClick={handleClickCloseModal}>
@@ -10,7 +10,7 @@ const WatchTrailer = ({handleClickCloseModal}) => {
             <iframe 
             width="60%" 
             height="60%" 
-            src="https://www.youtube.com/embed/tgbNymZ7vqY"
+            src={`https://www.youtube.com/embed/${videoKey}`}
             >
             </iframe>
         </div>

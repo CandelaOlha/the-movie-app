@@ -8,6 +8,7 @@ const MovieDetails = () => {
     const params = useParams();
     const [movie, setMovie] = useState([]);
     const [credits, setCredits] = useState([]);
+    const [videoKey, setVideoKey] = useState([]);
     const [watchTrailer, setWatchTrailer] = useState(false);
 
     useEffect(() => {
@@ -20,6 +21,12 @@ const MovieDetails = () => {
         fetch(`${baseUrl}${params.id}/credits?${apiKey}`)
         .then(res => res.json())
         .then(data => setCredits(data))
+    }, [])
+
+    useEffect(() => {
+        fetch(`${baseUrl}${params.id}/videos?${apiKey}`)
+        .then(res => res.json())
+        .then(data => setVideoKey(data.results[0].key))
     }, [])
 
     const getMovieYear = (movie) => {
@@ -73,6 +80,7 @@ const MovieDetails = () => {
                 </div>
             </div>
             {watchTrailer && <WatchTrailer 
+            videoKey = {videoKey}
             handleClickCloseModal = {handleClickCloseModal}
             />}
         </main>
