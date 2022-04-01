@@ -66,7 +66,7 @@ const MovieDetails = () => {
         <main className="specific-movie-details-container">
             <div className="specific-movie-details">
                 <div className="movie-image-container">
-                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="movie-image" />
+                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={`${movie.title}`} className="movie-image" />
                 </div>
                 <div className="movie-details-text-container">
                     <h1 className="movie-name">{movie.title}</h1>
