@@ -1,6 +1,7 @@
 import "../styles/SpecificMoviesList.scss";
 import useFetchMovies from "../hooks/useFetchMovies";
 import MovieItem from "./MovieItem";
+import Pagination from "./Pagination";
 
 const SpecificMoviesList = ({url, title}) => {
 
@@ -17,6 +18,7 @@ const SpecificMoviesList = ({url, title}) => {
                 key = {movie.id}
                 />)}
             </div>
+            <Pagination />
         </div>
     )
 }

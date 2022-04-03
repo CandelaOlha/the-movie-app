@@ -37,3 +37,20 @@
     border-bottom: none;
   }
 }
+
+@mixin circleButton {
+  background-color: $color-light;
+  border: 1px solid $color-dark;
+  border-radius: 30px;
+  color: $color-dark;
+  cursor: pointer;
+  display: flex;
+  font-size: 20px;
+  margin: 0 5px;
+  padding: 15px;
+  transition: 0.1s;
+  &:enabled:hover {
+    background-color: $color-dark;
+    color: $color-light;
+  }
+}
