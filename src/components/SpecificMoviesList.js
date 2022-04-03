@@ -1,11 +1,13 @@
 import "../styles/SpecificMoviesList.scss";
 import useFetchMovies from "../hooks/useFetchMovies";
 import MovieItem from "./MovieItem";
+import usePagination from "../hooks/usePagination";
 import Pagination from "./Pagination";
 
 const SpecificMoviesList = ({url, title}) => {
 
-    const movies = useFetchMovies(url);
+    const {page, handleClickFirstPage, handleClickPrev, handleClickNext, handleClickLastPage} = usePagination();
+    const {movies, totalPages} = useFetchMovies(url, page);
 
     return (
         <div className="specific-movies-container">
@@ -18,7 +20,14 @@ const SpecificMoviesList = ({url, title}) => {
                 key = {movie.id}
                 />)}
             </div>
-            <Pagination />
+            <Pagination 
+            handleClickFirstPage={handleClickFirstPage}
+            handleClickPrev={handleClickPrev}
+            handleClickNext={handleClickNext}
+            handleClickLastPage={handleClickLastPage}
+            page={page}
+            totalPages={totalPages}
+            />
         </div>
     )
 }

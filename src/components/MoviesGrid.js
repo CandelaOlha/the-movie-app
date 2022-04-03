@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const MoviesGrid = ({url, link, title}) => {
 
-    const movies = useFetchMovies(url);
+    const {movies} = useFetchMovies(url, 1);
 
     const settings = {
         dots: false,

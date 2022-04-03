@@ -1,19 +1,29 @@
 import "../styles/Pagination.scss";
 import { MdFirstPage, MdNavigateBefore, MdNavigateNext, MdLastPage } from 'react-icons/md';
 
-const Pagination = () => {
+const Pagination = ({handleClickFirstPage, handleClickPrev, handleClickNext, handleClickLastPage, page, totalPages}) => {
     return (
         <div className="pagination">
-            <button>
+            <button
+            onClick={handleClickFirstPage}
+            >
                 <MdFirstPage />
             </button>
-            <button>
+            <button
+            onClick={handleClickPrev}
+            disabled={page === 1}
+            >
                 <MdNavigateBefore />
             </button>
-            <button>
+            <button
+            onClick={handleClickNext}
+            disabled={totalPages > 500 ? page === 500 : page === totalPages}
+            >
                 <MdNavigateNext />
             </button>
-            <button>
+            <button
+            onClick={handleClickLastPage}
+            >
                 <MdLastPage />
             </button>
         </div>
