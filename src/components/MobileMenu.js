@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const MobileMenu = (
     {mobileMenu, 
+    handleClickHome, 
     handleClickUpcoming, 
     handleClickTopRated, 
     handleClickPopular, 
@@ -10,6 +11,11 @@ const MobileMenu = (
     return (
         <div className={`mobile-menu-container ${mobileMenu && "show-mobile-menu-container"}`}>
             <ul className="mobile-menu">
+                <li className="mobile-menu-item">
+                    <Link to="/" 
+                    className="mobile-menu-link" 
+                    onClick={handleClickHome}>Home</Link>
+                </li>
                 <li className="mobile-menu-item">
                     <Link to="/upcoming-movies" 
                     className="mobile-menu-link" 
