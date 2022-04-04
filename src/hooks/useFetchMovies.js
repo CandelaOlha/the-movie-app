@@ -14,8 +14,6 @@ const useFetchMovies = (url, page, searchParams="") => {
         })
     }, [page, searchParams])
 
-    console.log(`${url}${page}${searchParams}`)
-
     return ({
         movies: movies, 
         totalPages: totalPages

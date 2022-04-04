@@ -9,8 +9,6 @@ const SpecificMoviesList = ({url, title}) => {
     const {page, handleClickFirstPage, handleClickPrev, handleClickNext, handleClickLastPage} = usePagination();
     const {movies, totalPages} = useFetchMovies(url, page);
 
-    console.log(page)
-
     return (
         <div className="specific-movies-container">
             <h2 className="section-title">{title}</h2>
