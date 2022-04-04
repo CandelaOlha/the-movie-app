@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetchMovies = (url, page, searchParams) => {
+const useFetchMovies = (url, page, searchParams="") => {
 
     const [movies, setMovies] = useState([]);
     const [totalPages, setTotalPages] = useState(1);
