@@ -8,7 +8,7 @@ import MovieBanner from "./MovieBanner";
 
 const MoviesSlider = () => {
 
-  const movies = useFetchMovies(popularMoviesUrl);
+  const {movies} = useFetchMovies(popularMoviesUrl, 1);
 
   const selectedMovies = movies.slice(0, 5);
 
