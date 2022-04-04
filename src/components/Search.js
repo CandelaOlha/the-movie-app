@@ -1,23 +1,21 @@
 import "../styles/Search.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { searchUrl } from "../aux/GlobalVariables";
 import MovieItem from "./MovieItem";
+import useFetchMovies from "../hooks/useFetchMovies";
+import usePagination from "../hooks/usePagination";
+import Pagination from "./Pagination";
 
 const Search = () => {
 
     const [inputValue, setInputValue] = useState("");
-    const [movies, setMovies] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams({
         query: "",
     })
-
-    useEffect(() => {
-        fetch(`${searchUrl}&query=${searchParams.get("query")}`)
-        .then(res => res.json())
-        .then(data => setMovies(data.results))
-    }, [searchParams])
-
+    const {page, handleClickFirstPage, handleClickPrev, handleClickNext, handleClickLastPage} = usePagination();
+    const {movies, totalPages} = useFetchMovies(searchUrl, page, `&query=${searchParams.get("query")}`);
+    
     const handleChange = (e) => {
         setInputValue(e.target.value);
     }
@@ -56,6 +54,15 @@ const Search = () => {
                     />)}
                 </div>
                 }
+                {movies &&
+                <Pagination 
+                handleClickFirstPage={handleClickFirstPage}
+                handleClickPrev={handleClickPrev}
+                handleClickNext={handleClickNext}
+                handleClickLastPage={handleClickLastPage}
+                page={page}
+                totalPages={totalPages}
+                />}
             </div>
         </main>
     )

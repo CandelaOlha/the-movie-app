@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 
-const useFetchMovies = (url, page) => {
+const useFetchMovies = (url, page, searchParams) => {
 
     const [movies, setMovies] = useState([]);
-    const [totalPages, setTotalPages] = useState(1)
+    const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
-        fetch(`${url}${page}`)
+        fetch(`${url}${page}${searchParams}`)
         .then(res => res.json())
         .then(data => {
             setMovies(data.results)
             setTotalPages(data.total_pages)
         })
-    }, [page])
+    }, [page, searchParams])
 
     return ({
         movies: movies, 
