@@ -1,6 +1,6 @@
 import "../styles/SpecificMoviesList.scss";
-import useFetchMovies from "../hooks/useFetchMovies";
 import MovieItem from "./MovieItem";
+import useFetchMovies from "../hooks/useFetchMovies";
 import usePagination from "../hooks/usePagination";
 import Pagination from "./Pagination";
 
