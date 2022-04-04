@@ -6,6 +6,7 @@
   color: $color-dark;
   max-width: 100%;
   text-decoration: none;
+  transition: 0.4s;
   width: 200px;
   .movie-details {
     margin: 0 10px 40px;
@@ -17,6 +18,9 @@
       line-height: 1.6;
       margin-top: 20px;
     }
+  }
+  &:hover {
+    transform: translateY(-10px);
   }
 }
 

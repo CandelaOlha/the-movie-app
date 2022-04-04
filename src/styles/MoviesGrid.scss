@@ -38,8 +38,12 @@
     .slick-track {
       display: flex;
     }
-    .slick-slice {
+    .slick-slide {
       max-width: 200px;
+      transition: 0.4s;
+      &:hover {
+        transform: translateY(-10px);
+      }
     }
   }
 }
