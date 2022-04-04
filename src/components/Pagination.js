@@ -6,6 +6,7 @@ const Pagination = ({handleClickFirstPage, handleClickPrev, handleClickNext, han
         <div className="pagination">
             <button
             onClick={handleClickFirstPage}
+            disabled={page === 1}
             >
                 <MdFirstPage />
             </button>
@@ -22,7 +23,8 @@ const Pagination = ({handleClickFirstPage, handleClickPrev, handleClickNext, han
                 <MdNavigateNext />
             </button>
             <button
-            onClick={handleClickLastPage}
+            onClick={() => handleClickLastPage(totalPages > 500 ? 500 : totalPages)}
+            disabled={totalPages > 500 ? page === 500 : page == totalPages}
             >
                 <MdLastPage />
             </button>
