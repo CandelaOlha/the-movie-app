@@ -14,9 +14,7 @@ const Search = () => {
         query: "",
     })
     const {page, handleClickFirstPage, handleClickPrev, handleClickNext, handleClickLastPage} = usePagination();
-    const {movies, totalPages} = useFetchMovies(searchUrl, page, `%&query=${searchParams.get("query")}`);
-
-    console.log(page);
+    const {movies, totalPages} = useFetchMovies(searchUrl, page, `&query=${searchParams.get("query")}`);
     
     const handleChange = (e) => {
         setInputValue(e.target.value);
@@ -29,8 +27,6 @@ const Search = () => {
           query: inputValue, 
         })
       }
-
-      console.log(`${searchParams.get("query")}`)
 
     return (
         <main className="search-section">
@@ -58,6 +54,7 @@ const Search = () => {
                     />)}
                 </div>
                 }
+                {movies &&
                 <Pagination 
                 handleClickFirstPage={handleClickFirstPage}
                 handleClickPrev={handleClickPrev}
@@ -65,7 +62,7 @@ const Search = () => {
                 handleClickLastPage={handleClickLastPage}
                 page={page}
                 totalPages={totalPages}
-                />
+                />}
             </div>
         </main>
     )
