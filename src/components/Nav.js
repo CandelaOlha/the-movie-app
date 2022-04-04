@@ -13,7 +13,11 @@ const Nav = () => {
         mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
     }
 
-    const handleClickUpcoming = () => { // Código repetitivo. Ver si hay alguna forma de hacerlo mejor.
+    const handleClickHome = () => { // Código repetitivo. Ver si hay alguna forma de hacerlo mejor.
+        setMobileMenu(false);
+    }
+
+    const handleClickUpcoming = () => {
         setMobileMenu(false);
     }
 
@@ -54,6 +58,7 @@ const Nav = () => {
                 />
                 <MobileMenu 
                 mobileMenu = {mobileMenu}
+                handleClickHome = {handleClickHome}
                 handleClickUpcoming = {handleClickUpcoming}
                 handleClickTopRated = {handleClickTopRated}
                 handleClickPopular = {handleClickPopular}
