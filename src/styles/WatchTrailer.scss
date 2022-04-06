@@ -14,6 +14,8 @@
     top: 0;
     .close-modal {
         cursor: pointer;
+        display: flex;
+        padding: 5px;
         position: fixed;
         right: 10%;
         top: 10%;
