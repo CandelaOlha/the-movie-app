@@ -1,6 +1,6 @@
 import "../styles/Search.scss";
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { searchUrl } from "../aux/GlobalVariables";
 import MovieItem from "./MovieItem";
 import useFetchMovies from "../hooks/useFetchMovies";
@@ -13,8 +13,9 @@ const Search = () => {
     const [searchParams, setSearchParams] = useSearchParams({
         query: "",
     })
+    const navigate = useNavigate();
     const {page, handleClickFirstPage, handleClickPrev, handleClickNext, handleClickLastPage} = usePagination();
-    const {movies, totalPages} = useFetchMovies(searchUrl, page, `&query=${searchParams.get("query")}`);
+    const {movies, totalPages} = useFetchMovies(searchUrl, page, `&query=${searchParams.get("query")}`, navigate);
     
     const handleChange = (e) => {
         setInputValue(e.target.value);

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetchMovies = (url, page, searchParams="") => {
+const useFetchMovies = (url, page, searchParams="", navigate="") => {
 
     const [movies, setMovies] = useState([]);
     const [totalPages, setTotalPages] = useState(1);
@@ -11,6 +11,9 @@ const useFetchMovies = (url, page, searchParams="") => {
         .then(data => {
             setMovies(data.results)
             setTotalPages(data.total_pages)
+            if (data.results.length === 0) {
+                navigate("/PageNotFound");
+            }
         })
     }, [page, searchParams])
 
