@@ -6,6 +6,7 @@ import MovieItem from "./MovieItem";
 import useFetchMovies from "../hooks/useFetchMovies";
 import usePagination from "../hooks/usePagination";
 import Pagination from "./Pagination";
+import Loader from "./Loader";
 
 const Search = () => {
 
@@ -15,7 +16,7 @@ const Search = () => {
     })
     const navigate = useNavigate();
     const {page, handleClickFirstPage, handleClickPrev, handleClickNext, handleClickLastPage} = usePagination();
-    const {movies, totalPages} = useFetchMovies(searchUrl, page, `&query=${searchParams.get("query")}`, navigate);
+    const {movies, totalPages, isLoading} = useFetchMovies(searchUrl, page, `&query=${searchParams.get("query")}`, navigate);
     
     const handleChange = (e) => {
         setInputValue(e.target.value);
@@ -45,6 +46,7 @@ const Search = () => {
                     </label>
                     <input type="submit" value="Search" className="search-button"></input>
                 </form>
+                {isLoading && <Loader />}
                 {movies && 
                 <div className="movies-container">
                     {movies.map(movie => <MovieItem 
