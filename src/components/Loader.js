@@ -1,8 +1,9 @@
 import "../styles/Loader.scss";
+import { BiLoaderAlt } from 'react-icons/bi';
 
 const Loader = () => {
     return (
-        <div>Loading...</div>
+        <BiLoaderAlt className="loader" aria-label="Loading" />
     )
 }
 
