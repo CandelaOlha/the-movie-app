@@ -11,7 +11,7 @@ const useFetchMovies = (url, page, searchParams="", navigate="") => {
         .then(data => {
             setMovies(data.results)
             setTotalPages(data.total_pages)
-            if (data.results.length === 0) {
+            if (data?.results?.length === 0) {
                 navigate("/PageNotFound");
             }
         })
