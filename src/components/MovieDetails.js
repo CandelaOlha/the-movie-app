@@ -11,6 +11,7 @@ const MovieDetails = () => {
     const [videoKey, setVideoKey] = useState([]);
     const [watchTrailer, setWatchTrailer] = useState(false);
 
+    // los fetch podrian estar los tres dentro del mismo use useEffect, no hacen falta tres
     useEffect(() => {
         fetch(`${baseUrl}${params.id}?${apiKey}`)
         .then(res => res.json())
@@ -51,6 +52,7 @@ const MovieDetails = () => {
             }
             
         }
+        // perfecta esta funcion, muchisima atencion al etalle!
         if (directorsNames.join(", ") !== "") {
             return directorsNames.join(", ");
         }

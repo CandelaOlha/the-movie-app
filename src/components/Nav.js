@@ -13,6 +13,7 @@ const Nav = () => {
         mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
     }
 
+    // No necesitas tantas funciones! Una sola alcanza: handleClick. Cada boton puede llamar a la misma funcion, nada se lo impide
     const handleClickHome = () => { // Código repetitivo. Ver si hay alguna forma de hacerlo mejor.
         setMobileMenu(false);
     }
