@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useFetchMovies = (url, page, searchParams="", navigate="") => {
-
+// excelente este hook!
     const [movies, setMovies] = useState([]);
     const [totalPages, setTotalPages] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
